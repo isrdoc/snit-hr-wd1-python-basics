@@ -1,14 +1,20 @@
 secret = 22
-max_attempts = 3
+attempts = 3
 
-for attempt in range(max_attempts):
-    print("Attempt number: " + str(attempt + 1) + " of " + str(max_attempts))
+while True:
+    print("Attempts left: " + str(attempts))
+    attempts -= 1
     guess = int(input("Guess the secret number (between 1 and 30): "))
+
+    if attempts <= 0:
+        print("Out of attempts, WHY???")
+        continue
 
     if guess == secret:
         print("You've guessed it - congratulations! It's number 22.")
         break
-    else:
-        print("Sorry, your guess is not correct... The secret number is not " + str(guess))
 
-print("Done")
+    print("Sorry, your guess is not correct... The secret number is not " + str(guess))
+    print("End of iteration")
+
+print("End of loop")
