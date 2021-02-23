@@ -1,6 +1,6 @@
 import random
 
-secret = random.randint(1, 30)
+SECRET = random.randint(1, 30)
 attempts = 10
 
 while True:
@@ -12,13 +12,13 @@ while True:
         print("Out of attempts")
         break
 
-    if guess == secret:
+    if guess == SECRET:
         print("You've guessed it - congratulations! It's number 22.")
         break
 
     print("Sorry, your guess is not correct... The secret number is not " + str(guess))
 
-    if guess > secret:
+    if guess > SECRET:
         print("Try something smaller")
         continue
 
