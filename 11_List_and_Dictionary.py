@@ -1,17 +1,26 @@
-car_brands = [
-    {
-        "name": "tesla",
-        "number_of_cars_made": 1000
-    },
-    {
-        "name": "toyota",
-        "number_of_cars_made": 2000
-    },
-    {
-        "name": "nissan",
-        "number_of_cars_made": 500
-    }
-]
+import random
+import json
 
-for car_brand in car_brands:
-    print(f'Brand {car_brand["name"]} has made {car_brand["number_of_cars_made"]} cars.')
+secret = random.randint(1, 30)
+attempts = 0
+
+with open("score_list.json", "r") as score_file:
+    score_list = json.loads(score_file.read())
+    score_list.sort()
+    print("Top scores: " + str(score_list[:3]))
+
+while True:
+    guess = int(input("Guess the secret number (between 1 and 30): "))
+    attempts += 1
+
+    if guess == secret:
+        print("You've guessed it - congratulations! It's number " + str(secret))
+        print("Attempts needed: " + str(attempts))
+        score_list.append(attempts)
+        with open("score_list.json", "w") as score_file:
+            score_file.write(json.dumps(score_list))
+        break
+    elif guess > secret:
+        print("Your guess is not correct... try something smaller")
+    elif guess < secret:
+        print("Your guess is not correct... try something bigger")
