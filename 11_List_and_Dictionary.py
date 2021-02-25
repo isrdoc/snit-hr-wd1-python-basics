@@ -1,40 +1,17 @@
-fruits = ["apple", "banana", "cherry", 100]
+car_brands = [
+    {
+        "name": "tesla",
+        "number_of_cars_made": 1000
+    },
+    {
+        "name": "toyota",
+        "number_of_cars_made": 2000
+    },
+    {
+        "name": "nissan",
+        "number_of_cars_made": 500
+    }
+]
 
-fruit_1_string = "apple, red, big, fresh"
-
-fruit_1_dict = {
-    "name": "apple",
-    "color": "red",
-    "size": 10,
-    "freshness": True
-}
-box_2 = {
-    "name": "books",
-    "height": 30,
-    "width": 50,
-    "depth": 20,
-    "items": []
-}
-
-box_1 = {
-    "name": "toys",
-    "height": 50,
-    "width": 30,
-    "depth": 20,
-    "items": [
-        {
-            "name": "ball",
-            "size": "big",
-            "colors": "blue"
-        },
-        {
-            "name": "truck",
-            "color": "black",
-            "size": "small"
-        }
-    ]
-}
-
-boxes = [box_1, box_2]
-
-print(boxes[0]["items"][1]["name"])
+for car_brand in car_brands:
+    print(f'Brand {car_brand["name"]} has made {car_brand["number_of_cars_made"]} cars.')
