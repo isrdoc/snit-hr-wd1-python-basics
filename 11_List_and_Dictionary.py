@@ -27,7 +27,6 @@ while True:
             "attempts": attempts,
             "date": str(current_time)
         })
-
         with open("score_list.json", "w") as score_file:
             score_file.write(json.dumps(score_list))
         break
