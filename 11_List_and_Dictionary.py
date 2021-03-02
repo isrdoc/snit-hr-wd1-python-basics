@@ -1,12 +1,13 @@
 import random
 import json
 import datetime
-from greetings import print_greeting
+from greetings import format_greeting
 
 secret = random.randint(1, 30)
 attempts = 0
 
-print_greeting("Hello", "player")
+player_greet = format_greeting("Hello", "player")
+print(player_greet)
 
 with open("score_list.json", "r") as score_file:
     score_list = json.loads(score_file.read())
