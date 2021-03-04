@@ -27,7 +27,7 @@ while True:
 
     if guess == secret:
         current_time = datetime.datetime.now()
-        score_list.append({
+        [].append({
             "attempts": attempts,
             "date": str(current_time)
         })
